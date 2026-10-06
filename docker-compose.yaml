@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: raw-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: raw_db
+      POSTGRES_USER: anand
+      POSTGRES_PASSWORD: Tony!@#$
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - raw_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  raw_postgres_data:
+  
